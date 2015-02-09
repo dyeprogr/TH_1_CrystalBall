@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -16,8 +17,17 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         // Declare our View variables
-        TextView answerLabel = (TextView) findViewById(R.id.textView1);
+        final TextView answerLabel = (TextView) findViewById(R.id.textView1);
         Button getAnswerButon = (Button) findViewById(R.id.button1);
+
+        getAnswerButon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //The button was clicked, so update the answer label with an answer
+                String answer = "Yes";
+                answerLabel.setText(answer);
+            }
+        });
     }
 
 
